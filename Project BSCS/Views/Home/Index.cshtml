@@ -1,0 +1,161 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] Real Estate</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Theme.css" />
+    <link rel="stylesheet" href="~/css/main.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/Project_BSCS.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-3">
+            <div class="container-fluid">
+                <a class="navbar-brand mx-2" asp-controller="Home" asp-action="Index">Project</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav mx-auto">
+                        @*<li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home
+                                <span class="visually-hidden">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Property" asp-action="Property">Property</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Property" asp-action="AddProperty">Sell</a>
+                        </li>*@
+                    </ul>
+                    <ul class="navbar-nav">
+                        <partial name="_LoginInfo" />
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+        <!--Welcom Container-->
+                <div class="home-bg-2 shadow-lg">
+                    <div class="blur-bg">
+                        <div class="row align-items-center mx-0">
+                            <div class="col-sm-12 col-md-12 col-lg-12 mt-5">
+                                <h1 class="text-light text-center">Welcome to Our Website</h1>
+                                <h5 class="text-light text-center mt-4">Pakistan's 1st Online Real Estate Marketplace</h5>
+                            </div>
+                        </div>
+                        @*<div class="row justify-content-center align-items-center mt-5 mx-0">
+                            <div class="col-sm-8 col-md-8 col-lg-6">
+                                <form class="d-flex">
+                                    <input class="form-control me-sm-2 rounded-pill" placeholder="Search Property">
+                                    <button class="btn btn-primary my-2 my-sm-0 rounded-pill" asp-action="Property" asp-controller="Property" type="submit">Search</button>
+                                </form>
+                            </div>
+                        </div>*@
+                        <div class="row justify-content-center align-items-center mt-5 mx-0">
+                            <div class="col-sm-12 col-md-5 col-lg-5 my-4 text-center">
+                                <h5 class="text-light text-center">Time to Find your dream home</h5>
+                                <a class="btn btn-primary btn-sm rounded-pill btn-hover" asp-controller="Property" asp-action="Property"><i class="bi bi-search fs-6"></i>&nbsp; View Properties</a>
+                            </div>
+                            <div class="col-sm-12 col-md-1 col-lg-1 text-center">
+                                <h4 class="text-muted text-center mb-2">OR</h4>
+                            </div>
+                            <div class="col-sm-12 col-md-5 col-lg-5 my-4 text-center">
+                                <h5 class="text-light text-center">Time to List your properties and sell</h5>
+                                <a class="btn btn-primary btn-sm rounded-pill btn-hover" asp-controller="Property" asp-action="AddProperty"><i class="bi bi-currency-dollar fs-6"></i>&nbsp; Sell Property</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        <!--Popular Cities-->
+        <div class="container my-5">
+                <div class="shadow card-body con-bg">
+                    <div class="row align-items-center">
+                        <h3 class="text-center col-sm-4 col-md-4 col-lg-4 my-4 mx-0">Popular Cites</h3>
+                        <div class="col-sm-8 col-md-8 col-lg-8">
+                            <div class="row align-items-center">
+                                <div class="col-sm-6 col-md-6 col-lg-4 p-1 img-hover">
+                                    <span class="py-lg-5" tabindex="0" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover focus" title="Karachi" data-bs-content="Karachi is the largest city in Pakistan and the twelfth-largest city in the world. It is the capital of the Pakistani province of Sindh.">
+                                        <img src="~/Image/karachi.jpg" class="img-fluid" alt="Karachi" />
+                                    </span>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-4 p-1 img-hover">
+                                    <span class="py-lg-5" tabindex="0" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover focus" title="Lahore" data-bs-content="Lahore is the capital of the Pakistani province of Punjab, is Pakistan's 2nd largest city after Karachi, and is the 26th largest city in the world. Lahore is the largest city of Punjab.">
+                                        <img src="~/Image/lahore.jpg" class="img-fluid" alt="Lahore" />
+                                    </span>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-4 p-1 img-hover">
+                                    <span class="py-lg-5" tabindex="0" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover focus" title="Islamabad" data-bs-content="Islamabad is the capital city of Pakistan, and is administered by the Pakistani federal government as part of the Islamabad Capital Territory.">
+                                        <img src="~/Image/islamabad.jpg" class="img-fluid" alt="Islamabad" />
+                                    </span>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-4 p-1 img-hover">
+                                    <span class="py-lg-5" tabindex="0" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover focus" title="Peshawar" data-bs-content="Peshawar, historically known as Purushapura, is the capital of the Pakistani province of Khyber Pakhtunkhwa and its largest city. It is the sixth-largest city in Pakistan, and the largest Pashtun-majority city in the country.">
+                                        <img src="~/Image/peshawar.jpg" class="img-fluid" alt="Peshawar"/>
+                                    </span>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-4 p-1 img-hover">
+                                    <span class="py-lg-5" tabindex="0" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover focus" title="Multan" data-bs-content="Multan is a city and capital of Multan Division located in Punjab, Pakistan. Situated on the bank of the Chenab River, Multan is Pakistan's 7th largest city and is the major cultural and economic centre of Southern Punjab.">
+                                        <img src="~/Image/multan.jpg" class="img-fluid" alt="Multan" />
+                                    </span>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-4 p-1 img-hover">
+                                    <span class="py-lg-5" tabindex="0" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover focus" title="Faisalabad" data-bs-content="Faisalabad has grown to become a major industrial and distribution centre because of its central location in the region and connecting roads, rails, and air transportation.">
+                                        <img src="~/Image/faisalabad.jpg" class="img-fluid" alt="Faisalabad" />
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <!--Properties Section-->
+        <div class="container my-5">
+                <h1 class="text-center my-5">Recent Properties</h1>
+                @await Component.InvokeAsync("TopProperty")
+        </div>
+
+        <!--Footer Secion-->
+        <footer class="border-top text-muted shadow bg-black">
+            <div class="container p-3">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-sm-12 col-md-5 col-lg-5 text-center">
+                        Copyright &copy; Saad Saifullah &nbsp;@DateTime.Now.Year
+                    </div>
+                    <div class="col-sm-12 col-md-2 col-lg-2 text-center">
+                        <a class="text-decoration-none text-muted lh-lg" asp-controller="Home" asp-action="About">About</a>
+                    </div>
+                    <div class="col-sm-12 col-md-5 col-lg-5 text-center">
+                        <a class="text-light" href="https://github.com/saadkhan2211"><i class="bi bi-github"></i></a>&nbsp;
+                        <a class="text-light" href="https://www.instagram.com/saadsaifullah.khan/"><i class="bi bi-instagram"></i></a>&nbsp;
+                        <a class="text-light" href="https://twitter.com/SaadSaifullah11"><i class="bi bi-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+    </script>
+</body>
+</html>

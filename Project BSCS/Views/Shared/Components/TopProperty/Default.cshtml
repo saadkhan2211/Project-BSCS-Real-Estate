@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Property>
+<html>
+    <head>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="~/css/Theme.css" />
+    <link rel="stylesheet" href="~/css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+<body>
+<div class="row align-items-center mt-5">
+                @foreach ( var Property in Model)
+                {
+                    <div class="col-sm-12 col-md-6 col-lg-4 mb-2">
+                        <div class="shadow">
+                            <img src="@Property.PropertyImageUrl" class="card-img-top" height="420"></img>
+                                <div class="card-body">
+                                    <div class="row justify-content-between align-items-center">
+                                        <p class="card-text col-lg-12 col-md-12 col-sm-12 text-overflow">@Property.Title</p>
+                                    </div>
+                                    <small class="row justify-content-start align-items-center mt-2">
+                                        <p class="col-lg-12 col-md-12 col-sm-12 text-start"><i class="bi bi-geo-alt-fill"></i>&nbsp;@Property.Location, @Property.City</p>
+                                    </small>
+                                    <div class="row justify-content-between align-items-center">
+                                        <div class="col-lg-3 col-md-12 col-sm-12">
+                                            <small><i class="fa-solid fa-bed"></i> &nbsp;@Property.Bedroom</small><br/>
+                                            <small><i class="fa-solid fa-bath"></i> &nbsp; @Property.Bathroom</small>
+                                        </div>
+                                        <h4 class="card-text text-end col-lg-8 col-md-12 col-sm-12">@Property.Price PKR</h4>
+                                    </div>
+                                    <div class="row justify-content-between align-content-center mt-1">
+                                        <div class="col-lg-3 col-md-3 col-sm-3"></div>
+                                        <a href="/Property/getproperty/@Property.Id" class="btn btn-primary btn-sm rounded-3 col-lg-4 col-md-5 col-sm-4">Details</a>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                }
+                
+         </div>
+</body>
+</html>

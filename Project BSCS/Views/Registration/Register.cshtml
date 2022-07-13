@@ -1,0 +1,74 @@
+﻿@model Project_BSCS.Models.Registration
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Theme.css" />
+    <link rel="stylesheet" href="~/css/main.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+    <title>Sign Up</title>
+</head>
+
+<body class="body-bg">
+    <partial name="_Notification" />
+    <div class="container w-75 my-3"></br>
+            <div class="row justify-content-sm-evenly align-items-center shadow-lg rounded-3 bg-light">
+                <div class="col-md-3 login-form card-body mx-5 my-0">
+                    <h1 class="text-center card-title mt-1">Sign Up</h1>
+                    <hr />
+                    <p class="mb-3">Already have an account ? <a asp-controller="Registration" asp-action="Login">Login</a></p>
+            
+                        <form method="post">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="First Name" asp-for="FirstName"/>
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Last Name" asp-for="LastName"/>
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Email Address" asp-for="Email"/>
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" class="form-control" placeholder="Password" asp-for="Password"/>
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" class="form-control" placeholder="Confirm Password" asp-for="ConfirmPassword"/>
+                                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <button type="submit" class="btn rounded-pill btn-color" asp-controller="Registration" asp-action="Register">Sign Up</button>
+                                <button class="btn btn-secondary btn-dark rounded-pill" asp-action="Index" asp-controller="Home">Back to Home</button>
+                            </div>
+                        </form>
+                </div>
+                <div class="col-md-4 reg-cus-hr p-0 mx-3">
+                </div>
+                <div class="col-md-5 cus-col mx-5">
+                    <img src="~/Image/SignUp.jpg" class="img-fluid"/>
+                </div>
+            </div>
+    </div>
+
+@*<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+
+@*@section Scripts{
+    @{
+    <partial name="_ValidationScriptsPartial"/>
+    }
+}*@
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+﻿
+.body-bg {
+    background:url('../Image/b1.jpg');
+    background-repeat:no-repeat;
+}
+
+.blur-ef {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.cus-hr {
+    background-color: #D0D0D0;
+    width: 1px;
+    height: 35vh;
+}
+
+.reg-cus-hr {
+    background-color: #D0D0D0;
+    width: 1px;
+    height: 50vh;
+}
+
+.cus-col {
+    background: none;
+    transform: scale(0.9);
+    opacity: 80%;
+}
+
+.btn-color {
+    background-color: #0071FB;
+    color: #ffffff;
+}
+
+    .btn-color:hover {
+        color: #ffffff;
+        background: #004DAB;
+    }
+
+.home-bg-1 {
+    background-image: url('../Image/bg.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 0;
+    -webkit-box-orient: vertical;
+}
+
+.home-bg-2 {
+    background-image: url('../Image/b3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 450px;
+}
+.blur-bg {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 450px;
+}
+.btn-hover {
+    transform: scale(1);
+}
+    .btn-hover:hover {
+        transform: scale(1.1);
+        transition: 0.3s ease-out;
+    }
+@media(min-width:768px){
+    .img-hover {
+        transition: 0.2s ease-in;
+    }
+
+        .img-hover:hover {
+            transform: scale(1.05);
+            transition: 0.5s ease;
+        }
+    .con-bg {
+        background: linear-gradient(to right, white 50%, #17202A 50%);
+    }
+}
+
+
+@media(max-width:768px) {
+    .cus-col {
+        display: none;
+    }
+
+    .cus-hr {
+        display: none;
+    }
+
+    .reg-cus-hr {
+        display: none;
+    }
+}

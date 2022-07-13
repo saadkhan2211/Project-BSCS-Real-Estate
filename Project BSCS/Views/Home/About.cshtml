@@ -1,0 +1,91 @@
+﻿@{
+    Layout = null;
+}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] About</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Theme.css" />
+    <link rel="stylesheet" href="~/css/main.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/Project_BSCS.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-3">
+            <div class="container-fluid">
+                <a class="navbar-brand mx-2" asp-controller="Home" asp-action="Index">Project</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home
+                                <span class="visually-hidden">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Property" asp-action="Property">Property</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Property" asp-action="AddProperty">Sell</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <partial name="_LoginInfo" />
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!--About Project-->
+    <div class="container my-5">
+            <div class="mt-5 card-body shadow-lg rounded-3">
+                <h1 class="text-center my-5">About</h1>
+                <div class="my-5">
+                    <div class="card-text">
+                        <h5 class="ms-2">This Project is built by a University Student.</h5>
+                        <ul>
+                            <li>Developed by: Saad Saifullah</li>
+                            <li>Student of: University of Karachi</li>
+                            <li>Seat No: EB21102094</li>
+                            <li>Section: BSCS II Evening (B)</li>
+                        </ul>
+                        <div class="text-center mt-5">
+                            <p>I will keep updating this project and try to make it more better.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <!--Footer Secion-->
+    <footer class="border-top text-muted shadow bg-black">
+            <div class="container p-3">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-sm-12 col-md-5 col-lg-5 text-center">
+                        Copyright &copy; Saad Saifullah &nbsp;@DateTime.Now.Year
+                    </div>
+                    <div class="col-sm-12 col-md-2 col-lg-2 text-center">
+                        <a class="text-decoration-none text-muted lh-lg" asp-controller="Home" asp-action="About">About</a>
+                    </div>
+                    <div class="col-sm-12 col-md-5 col-lg-5 text-center">
+                        <a class="text-light" href="https://github.com/saadkhan2211"><i class="bi bi-github"></i></a>&nbsp;
+                        <a class="text-light" href="https://www.instagram.com/saadsaifullah.khan/"><i class="bi bi-instagram"></i></a>&nbsp;
+                        <a class="text-light" href="https://twitter.com/SaadSaifullah11"><i class="bi bi-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>

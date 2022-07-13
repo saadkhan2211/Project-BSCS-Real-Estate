@@ -1,0 +1,62 @@
+﻿@model Project_BSCS.Models.Login
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Theme.css" />
+    <link rel="stylesheet" href="~/css/main.css" />
+    <title>Login</title>
+</head>
+<body class="body-bg">
+    <div class="container w-75 my-5"><br /><br />
+        <div class="row justify-content-sm-evenly align-items-center shadow-lg rounded-3 bg-light">
+            <div class="col-md-3 login-form card-body mx-5 my-0">
+                <h1 class="text-center card-title mt-0">Login</h1>
+                <hr />
+                <p class="text-center">Don't have an account ? <a asp-controller="Registration" asp-action="Register">Sign Up</a></p>
+                    <form method="post">
+                        <div class="mb-3">
+                           <input type="text" class="form-control" placeholder="Email Address" asp-for="Log_email"/>
+                           <span asp-validation-for="Log_email" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                           <input type="password" class="form-control" placeholder="Password" asp-for="Log_pass"/>
+                           <span asp-validation-for="Log_pass" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3 form-group form-check">
+                           <label class="form-check-label">
+                           <input class="form-check-input" asp-for="Log_Rem" /> @Html.DisplayNameFor(model => model.Log_Rem)
+                           </label>
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn rounded-pill btn-color">Login</button>
+                            <button class="btn btn-secondary btn-dark rounded-pill" asp-action="Index" asp-controller="Home">Back to Home</button>
+                        </div>
+                    </form>
+            </div>
+            <div class="col-md-4 cus-hr p-0 mx-3">
+            </div>
+            <div class="col-md-5 cus-col mx-5">
+                <img src="~/Image/SignIn.jpg" class="img-fluid"/>
+            </div>
+        </div>
+    </div>
+@*<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+
+@*@section Scripts{
+    @{
+    <partial name="_ValidationScriptsPartial"/>
+    }
+}*@
+
+</body>
+</html>

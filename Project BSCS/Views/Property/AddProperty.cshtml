@@ -1,0 +1,161 @@
+﻿@model Property
+
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="~/css/Theme.css" />
+    <link rel="stylesheet" href="~/css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Property</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-3">
+            <div class="container-fluid">
+                <a class="navbar-brand mx-2" href="#">Project</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home
+                                <span class="visually-hidden">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Property" asp-action="Property">Property</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Property" asp-action="AddProperty">Sell</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <partial name="_LoginInfo" />
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<div class="container my-5">
+    <div class="mt-5 card-body shadow-lg rounded-3">
+        <h1 class="text-center my-3">Add Property</h1>
+        <hr class="w-25 text-center mx-auto" />
+        @if (ViewBag.IsSuccess == true)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Congratulations</strong> Your Property has been listed Successfully.<br/>
+                Click <a asp-action="GetProperty" asp-controller="Property" asp-route-id="@ViewBag.PropertyId">Here</a> to view details.
+
+                 <button type="button" class="btn-close btn" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+        <form asp-action="AddProperty" enctype="multipart/form-data">
+            <div class="row justify-content-evenly align-content-center my-3">
+                <div class="col-sm-5 col-md-5 col-lg-5">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group my-4">
+                            <input asp-for="Title" class="form-control" placeholder="Title" />
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+                        <div class="form-group my-4">
+                            <textarea asp-for="Description" class="form-control" placeholder="Description" /></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                        <div class="form-group my-4">
+                            <label asp-for="PropertyImage" class="form-label">Upload Outdoor Image of Property</label>
+                            <input class="form-control" asp-for="PropertyImage" id="formFile">
+                        </div>
+                        <div class="form-group my-4">
+                            <label asp-for="PropertyImages" class="form-label">Upload Indoor Images of Property</label>
+                            <input class="form-control" asp-for="PropertyImages" id="formFile">
+                        </div>
+                        <div class="form-group my-4">
+                            <input asp-for="Location" class="form-control" placeholder="Location" />
+                            <span asp-validation-for="Location" class="text-danger"></span>
+                        </div>
+                        <div class="form-group my-4">
+                            <input asp-for="City" class="form-control" placeholder="City" />
+                            <span asp-validation-for="City" class="text-danger"></span>
+                        </div>
+                        <div class="form-group my-4">
+                            <input asp-for="Area" class="form-control" placeholder="Area" />
+                            <span asp-validation-for="Area" class="text-danger"></span>
+                        </div>
+                        <div class="form-group my-4">
+                            <input asp-for="Bedroom" class="form-control" placeholder="Bedrooms" />
+                            <span asp-validation-for="Bedroom" class="text-danger"></span>
+                        </div>
+                        <div class="form-group my-4">
+                            <input asp-for="Bathroom" class="form-control" placeholder="Bathrooms" />
+                            <span asp-validation-for="Bathroom" class="text-danger"></span>
+                        </div> 
+                </div>
+                <div class="col-sm-5 col-md-5 col-lg-5">
+                        <div class="form-group my-4">
+                            <input asp-for="Floors" class="form-control" placeholder="Floors" />
+                            <span asp-validation-for="Floors" class="text-danger"></span>
+                        </div>
+                        <div class="form-group my-4">
+                            <input asp-for="Price" class="form-control" placeholder="Price" />
+                            <span asp-validation-for="Price" class="text-danger"></span>
+                        </div>
+                        <div class="form-group my-4">
+                            <input asp-for="Hospital" class="form-control" placeholder="Nearby Hospital" />
+                            <span asp-validation-for="Hospital" class="text-danger"></span>
+                        </div>
+                        <div class="form-group my-4">
+                            <input asp-for="Institute" class="form-control" placeholder="Nearby Institute" />
+                            <span asp-validation-for="Institute" class="text-danger"></span>
+                        </div>
+                        <div class="form-group my-4">
+                            <input asp-for="Hotel" class="form-control" placeholder="Nearby Hotel/Restaurants" />
+                            <span asp-validation-for="Hotel" class="text-danger"></span>
+                        </div>
+                        <div class="form-group my-4">
+                            <input asp-for="Name" class="form-control" placeholder="Name" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group my-4">
+                            <input asp-for="ContactNumber" class="form-control" placeholder="Contact Number" />
+                            <span asp-validation-for="ContactNumber" class="text-danger"></span>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="submit" value="Sell" class="btn btn-primary rounded-3 ms-auto" />
+                        </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!--Footer Secion-->
+        <footer class="border-top text-muted shadow bg-black">
+            <div class="container p-3">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-sm-12 col-md-5 col-lg-5 text-center">
+                        Copyright &copy; Saad Saifullah &nbsp;@DateTime.Now.Year
+                    </div>
+                    <div class="col-sm-12 col-md-2 col-lg-2 text-center">
+                        <a class="text-decoration-none text-muted lh-lg" asp-controller="Home" asp-action="About">About</a>
+                    </div>
+                    <div class="col-sm-12 col-md-5 col-lg-5 text-center">
+                        <a class="text-light" href="https://github.com/saadkhan2211"><i class="bi bi-github"></i></a>&nbsp;
+                        <a class="text-light" href="https://www.instagram.com/saadsaifullah.khan/"><i class="bi bi-instagram"></i></a>&nbsp;
+                        <a class="text-light" href="https://twitter.com/SaadSaifullah11"><i class="bi bi-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>
